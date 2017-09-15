@@ -28,8 +28,21 @@ public class CharacterA implements Dueler {
 	}
 	
 	public boolean determineIfOpponentIsFair(Dueler d, int target) {
-		
-		return true;
+		if(d.getHP() == target) {
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
+	public int getAction(Object caller) {
+		return (int) (Math.random()*3);
+	}
+	
+	public void hit(Object caller) {
+		if(caller instanceof Dueler)
+		{
+			this.hp = hp - 10;
+		}
+	}
 }
